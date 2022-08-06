@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Gender extends Model
 {
     use HasFactory;
 
+    protected $guarded=[
+        "id"
+    ];
+
     public static $rules=array(
-        "opinion"=>"required|string|max:120"
+    "content"=>"required"
     );
-
     
-
-
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\User;
+use App\Models\Contact;
+use App\Models\Gender;
+use Illuminate\Support\Facades\Hash;
+
 class Register extends Component
 {   public $fullname;
     public $gender;
@@ -15,15 +18,22 @@ class Register extends Component
 
     protected $rules=[
         'fullname'=>'required',
-        'gender'=>'required',
+        'gender'=>'required|boolean',
         'email'=>'required|email',
-        'postcode'=>'required|',
-        'address'=>'required',
-        'opinion'=>'required|max:120'
+        'postcode'=>'required|integer',
+        
+        'opinion'=>'required|max:120',
     ];
     
-    public function render()
+    public function updated($property)
     {
-        return view('livewire.register');
+        $this->validateOnly($property);
     }
+
+    public function register(){
+        $validateData=$this->validate();
+       
+    }
+
+
 }

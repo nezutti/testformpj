@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration
+class CreateGendersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('genders', function (Blueprint $table) {
             $table->id();
-            $table->string("fullname");
-            $table->boolean("gender");
-            $table->string("email");
-            $table->char("postcode",8);
-            $table->string("address");
-            $table->string("building_name")->nullable();
-            $table->text("opinion");
+            $table->string("gender");
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
-
+           
         });
     }
 
@@ -35,10 +29,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
-    }
-
-    public function gender(){
-        return $this->belongsTo('App\Models\Gender');
+        Schema::dropIfExists('genders');
     }
 }
