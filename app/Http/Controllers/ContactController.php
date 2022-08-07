@@ -10,20 +10,19 @@ use App\Models\Contact;
 class ContactController extends Controller
 {
     public function index(){
-    
-        
-        return view("contacts.index",$param);
+     return view("contact.index");
     }
+
+ 
+    
+  
 
     public function confirm(Request $request)
-    {
-        $inputs=$request->all();
-        return view('contacts.confirm',['inputs'=>$inputs]);
+    {   
+        
+    $input = $request->only(['fullname','email','postcode','address','building_name','opinion']); 
+     
+     return view('contact.confirm',['input'=>$input]);
     }
 
-    public function send(Request $request){
-        $items=$request->all();
-        Contact::create($items);
-        return redirect("/contact/complete");
-    }
 }

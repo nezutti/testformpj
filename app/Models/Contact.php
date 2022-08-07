@@ -9,8 +9,23 @@ class Contact extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        "fullname",
+        "email",
+        "postcode",
+        "address",
+        "building_name",
+        "opinion",
+    ];
+
     public static $rules=array(
-        "opinion"=>"required|string|max:120"
+        
+        'fullname'=>'required',
+        'email'=>'required|email',
+        'postcode'=>'required|integer',
+        'address'=>'required',
+        'building_name'=>'required',
+        'opinion'=>'required|max:120',
     );
 
     

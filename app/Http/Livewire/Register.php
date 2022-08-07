@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Contact;
-use App\Models\Gender;
+
 use Illuminate\Support\Facades\Hash;
 
 class Register extends Component
