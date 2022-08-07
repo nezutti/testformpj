@@ -1,6 +1,6 @@
 <div class="confirm">
   <h2>内容確認</h2>
-  <from method="post" action="{{ route('contact.complete') }}">
+  <form method="post" action="{{ route('contact.send') }}">
     @csrf
     <table>
       <tr>
@@ -28,7 +28,8 @@
         <td> {{$input['opinion']}}</td>
       </tr>
     </table>
-    <input type="submit" value="送信">
+    <button type="submit" name="back" >戻る</button>
+    <buttom type="submit">送信</button>
   </from>
-  <a href="/">戻る</a>
+  <a href="/contact">戻る</a>
     

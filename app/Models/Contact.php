@@ -24,7 +24,7 @@ class Contact extends Model
         'email'=>'required|email',
         'postcode'=>'required|integer',
         'address'=>'required',
-        'building_name'=>'required',
+        
         'opinion'=>'required|max:120',
     );
 
