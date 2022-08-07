@@ -29,7 +29,7 @@
       </tr>
     </table>
     <button type="submit" name="back" >戻る</button>
-    <buttom type="submit">送信</button>
+    <button type="submit">送信</button>
   </from>
-  <a href="/contact">戻る</a>
+  
     

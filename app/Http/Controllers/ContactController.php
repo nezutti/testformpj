@@ -43,5 +43,47 @@ class ContactController extends Controller
 			->withInput($input);
         }
 
+        Contact::create($input);
+        return redirect()->action([ContactController::class,"complete"]);
+
     }
+
+    public function complete(){
+        return view('contact.complete');
+    }
+
+
+    public function find(){
+        return view('find');
+    }
+
+    public function search(Request $request){
+        $fullname=$request->fullname;
+        $email=$request->email;
+        $from_time=$request->from_time;
+        $to_time=$request->to_time;
+
+        $query=Contact::query();
+        
+        $query->when($fullname,function($query,$fullname){
+            return $query->where('fullname','like',"%$fullname%");
+        });
+
+        $query->when($email,function($query,$email){
+            return $query->where('email','like',"%$email%");
+        });
+
+        $query->when($from_time,function($query,$from_time){
+            return $query->whereDate('created_at','>=',$form_time);
+        });
+
+        $query->when($to_time,function($query,$to_time){
+            return $query->whereDate('created_at','<=',$to_time);
+        });
+
+        $items=$query->paginate(10);
+
+        return view('find',['items'=>$items]);
+    }
+       
 }

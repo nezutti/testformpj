@@ -19,4 +19,6 @@ Route::post('/contact',[ContactController::class,'post'])->name('contact.post');
 Route::get("/contact/confirm",[ContactController::class,'confirm'])->name('contact.confirm');
 Route::post('/contact/confirm', [ContactController::class,"send"])->name('contact.send');
 Route::get('/contact/complete', [ContactController::class,'complete'])->name('contact.complete');
+Route::get('contact/find',[ContactController::class,'find']);
+Route::get('contact/search',[ContactController::class,'search']);
 
