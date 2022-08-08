@@ -1,13 +1,21 @@
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-  <div class="form" id="form">
-    <form method="post" action="{{route('contact.post')}}" >
+<script src="{{ asset('js/index.js') }}"></script>
+  @if(count($errors)>0)
+    <ul>
+      @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+      @endforeach
+    </ul>
+  @endif
+  <div class="form">
+    <form method="post" action="{{route('contact.post')}}" id="form">
       @csrf
       <label for="fullname">お名前</label>
       <input type="text" name="fullname"  id="fullname" value="{{old('fullname')}}">
       
       <br> 
       <label for="email">メールアドレス</label>
-      <input type="email" id="email" name="email" value="{{old('email')}}">
+      <input type="text" id="email" name="email" value="{{old('email')}}">
       <br>
       <div class="h-adr">
       <span class="p-country-name" style="display:none;">Japan</span>

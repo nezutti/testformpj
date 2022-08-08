@@ -15,6 +15,7 @@ class ContactController extends Controller
 
 
     public function post(Request $request){
+        $this->validate($request, Contact::$rules);
         $input=$request->all();
         $request->session()->put("form_input", $input);
         return redirect()->action([ContactController::class,'confirm']);

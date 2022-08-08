@@ -18,10 +18,10 @@ class Register extends Component
 
     protected $rules=[
         'fullname'=>'required',
-        'gender'=>'required|boolean',
-        'email'=>'required|email',
-        'postcode'=>'required|integer',
         
+        'email'=>'required|email',
+        'postcode'=>'required|regex:/^[0-9-]+$/|size:8',
+        'address'=>'required',
         'opinion'=>'required|max:120',
     ];
     

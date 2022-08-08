@@ -7,11 +7,6 @@ const opinion = document.getElementById('opinion');
 const email = document.getElementById('email');
 
 
-
-fullname.addEventListener('input', e => {
-  
+fullname.addEventListener("input", e => {
+  if()
 })
-
-
-
-
