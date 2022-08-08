@@ -6,7 +6,7 @@
     <input type="text" id="fullname" name="fullname">
     <br/>
     <label for="created_at">登録日</label>
-    <input type="date" id="created_at" name="$from_time">
+    <input type="date" id="created_at" name="from_time">
     <span>~</span>
     <input type="date" id="created_at" name="to_time">
     <br/>
@@ -15,6 +15,7 @@
     <br/>
     <input type="submit" value="検索">
   </form>
+  <a href="/contact/find">リセット</a>
 </div>
 <div class="result">
   @if(@isset($items))
@@ -42,5 +43,6 @@
     </tr>
     @endforeach
   </table>
+  {{$items->links()}}
   @endif
 </div> 

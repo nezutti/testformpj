@@ -74,7 +74,7 @@ class ContactController extends Controller
         });
 
         $query->when($from_time,function($query,$from_time){
-            return $query->whereDate('created_at','>=',$form_time);
+            return $query->whereDate('created_at','>=',$from_time);
         });
 
         $query->when($to_time,function($query,$to_time){
@@ -91,6 +91,6 @@ class ContactController extends Controller
         $contact->delete();
         return back();
     }
-       
+
 }
 
