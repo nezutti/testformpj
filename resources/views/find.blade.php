@@ -1,6 +1,6 @@
 <div class="find">
   <h2>管理システム</h2>
-  <form method="post" action="contact/search">
+  <form method="get" action="/contact/search">
     @csrf
     <label for="fullname">お名前</label>
     <input type="text" id="fullname" name="fullname">
@@ -13,7 +13,7 @@
     <label for="email">メールアドレス</label>
     <input type="email" id="email" name="email">
     <br/>
-    <button type="submit">検索</button>
+    <input type="submit" value="検索">
   </form>
 </div>
 <div class="result">
@@ -24,14 +24,14 @@
       <th>お名前</th>
       <th>メールアドレス</th>
       <th>ご意見</th>
-    <tr>
-    <tr>
+    </tr>
+   
     @foreach($items as $item)
     <tr>
       <td>{{$item->id}}</td>
       <td>{{$item->fullname}}</td>
-      <td>{{$items->email}}</td>
-      <td>{{$items->opinion}}</td>
+      <td>{{$item->email}}</td>
+      <td>{{$item->opinion}}</td>
     </tr>
     @endforeach
   </table>
