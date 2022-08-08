@@ -21,4 +21,4 @@ Route::post('/contact/confirm', [ContactController::class,"send"])->name('contac
 Route::get('/contact/complete', [ContactController::class,'complete'])->name('contact.complete');
 Route::get('contact/find',[ContactController::class,'find']);
 Route::get('contact/search',[ContactController::class,'search']);
-
+Route::post('/contact/delete',[ContactController::class,'delete']);

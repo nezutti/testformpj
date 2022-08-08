@@ -11,7 +11,7 @@
     <input type="date" id="created_at" name="to_time">
     <br/>
     <label for="email">メールアドレス</label>
-    <input type="email" id="email" name="email">
+    <input type="text" id="email" name="email">
     <br/>
     <input type="submit" value="検索">
   </form>
@@ -32,6 +32,13 @@
       <td>{{$item->fullname}}</td>
       <td>{{$item->email}}</td>
       <td>{{$item->opinion}}</td>
+      <form method="post" action="/contact/delete">
+      @csrf
+      <td>
+        <input type="submit" value="削除">
+        <input type="hidden" name="id" value="{{$item->id}}">
+      </td>
+      </form>
     </tr>
     @endforeach
   </table>
