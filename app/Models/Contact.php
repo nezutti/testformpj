@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Rules\ZipCodeRule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,15 +19,15 @@ class Contact extends Model
     ];
 
     public static $rules=array(
-        
         'fullname'=>'required',
         'email'=>'required|email',
-        'postcode'=>'required|regex:/^[0-9-]+$/|size:8',
+        'postcode'=>'required|',
         'address'=>'required',
         'opinion'=>'required|max:120',
     );
+    }
 
     
 
 
-}
+

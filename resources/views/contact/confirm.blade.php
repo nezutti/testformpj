@@ -28,8 +28,9 @@
         <td> {{$input['opinion']}}</td>
       </tr>
     </table>
-    <button type="submit" name="back" >戻る</button>
     <button type="submit">送信</button>
+    <br>
+    <button type="submit"  name="back" >戻る</a>
   </from>
   
     

@@ -1,3 +1,15 @@
+<style>
+  .opinion{
+    
+  width: 26em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  }
+</style>
+
+
 <div class="find">
   <h2>管理システム</h2>
   <form method="get" action="/contact/search">
@@ -32,7 +44,7 @@
       <td>{{$item->id}}</td>
       <td>{{$item->fullname}}</td>
       <td>{{$item->email}}</td>
-      <td>{{$item->opinion}}</td>
+      <td><p class="opinion" title="{{$item->opinion}}">{{$item->opinion}}</p></td>
       <form method="post" action="/contact/delete">
       @csrf
       <td>

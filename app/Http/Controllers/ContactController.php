@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Contact;
 
+use App\Rules\ZipCodeRule;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,13 @@ class ContactController extends Controller
 
 
     public function post(Request $request){
-        $this->validate($request, Contact::$rules);
+        $request->validate([
+        'fullname'=>'required',
+        'email'=>'required|email',
+        'postcode'=>['required',new ZipCodeRule()],
+        'address'=>'required',
+        'opinion'=>'required|max:120',
+        ]);
         $input=$request->all();
         $request->session()->put("form_input", $input);
         return redirect()->action([ContactController::class,'confirm']);
