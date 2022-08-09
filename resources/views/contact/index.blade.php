@@ -3,13 +3,6 @@
 <script src="{{asset('js/character.js')}}"></script>
   
   <div class="form">
-    @if (count($errors) > 0)
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{$error}}</li>
-      @endforeach
-    </ul>
-    @endif
     <form method="post" action="{{route('contact.post')}}" id="form">
       @csrf
       <label for="fullname">お名前</label>
@@ -18,7 +11,7 @@
       <br> 
       <label for="email">メールアドレス</label>
       <input type="text" id="email" name="email" value="{{old('email')}}">
-      
+      <div id="error"></div>
      
       
       <br>

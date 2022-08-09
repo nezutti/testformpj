@@ -15,10 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const error = document.getElementById('error');
  
     if (!email.value.includes('@')) {
-      error.style.display = "block";
+      error.classList.add('form-invalid'); //エラーにクラス追加//
+      error.textContent = 'ちがいます';//クラス内のテキスト追加//
+      email.classList.add('input-invalid');//eメールにクラス追加//
+      return;
       
     } else {
-      error.style.display = "none";
+    
+    error.textContent = '';//クラス内のテキストをなくす//
+    email.classList.remove('input-invalid');//eメールに追加したクラス削除
     }
    
 
