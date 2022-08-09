@@ -1,12 +1,8 @@
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 <script src="{{ asset('js/index.js') }}"></script>
-  @if(count($errors)>0)
-    <ul>
-      @foreach($errors->all() as $error)
-        <li>{{$error}}</li>
-      @endforeach
-    </ul>
-  @endif
+<script src="{{asset('js/character.js')}}"></script>
+  <div class="error">
+  </div>
   <div class="form">
     <form method="post" action="{{route('contact.post')}}" id="form">
       @csrf
@@ -20,7 +16,7 @@
       <div class="h-adr">
       <span class="p-country-name" style="display:none;">Japan</span>
       <label for="postcode">郵便番号</label>
-      <label for="postcode">〒<input type="text" id="postcode" name="postcode" class="p-postal-code" value="{{old('postcode')}}"></label>
+      <label for="postcode">〒<input type="text" id="postcode" name="postcode" class="p-postal-code" value="{{old('postcode')}}" oninput="value = value.replace(/[０-９]/g,s => String.fromCharCode(s.charCodeAt(0) - 65248)).replace(/\D/g,'');"></label>
       <br>
       <label for="address">住所</label>
       <input type="text" id="address" name="address" class="p-region p-locality p-street-address p-extended-address" value="{{old('address')}}" />
@@ -35,6 +31,8 @@
       <button type="submit">内容確認</button>
       
     </form>
-    <a href="/contact/change">修正する</a>
     
+ 
+
   </div> 
+
