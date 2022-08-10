@@ -11,8 +11,7 @@
       <br> 
       <label for="email">メールアドレス</label>
       <input type="text" id="email" name="email" value="{{old('email')}}">
-      <div id="error"></div>
-     
+      <div id="err-msg-email"></div>
       
       <br>
       <div class="h-adr">
@@ -29,6 +28,7 @@
       <br>
       <label for="opinion">ご意見</label>
       <textarea name="opinion" id="opinion">{{old('opinion')}}</textarea>
+      <div id="err-msg-opinion"></div>
       <br>
       <button type="submit">内容確認</button>
       

@@ -1,10 +1,11 @@
 
 
 
-const postcode = document.getElementById('postcode');
+
+
 const address = document.getElementById('address');
 const building_name = document.getElementById('building_name');
-const opinion = document.getElementById('opinion');
+
 const email = document.getElementById('email');
 
 
@@ -12,20 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict'
   const email = document.getElementById('email');
   email.addEventListener('input', function () {
-  const error = document.getElementById('error');
+  const errMsgEmail = document.getElementById('err-msg-email');
  
-    if (!email.value.includes('@')) {
-      error.classList.add('form-invalid'); //エラーにクラス追加//
-      error.textContent = 'ちがいます';//クラス内のテキスト追加//
+    if (!email.value.match(email)) {
+      errMsgEmail.classList.add('form-invalid'); //エラーにクラス追加//
+      errMsgEmail.textContent = 'ちがいます';//クラス内のテキスト追加//
       email.classList.add('input-invalid');//eメールにクラス追加//
       return;
       
     } else {
     
-    error.textContent = '';//クラス内のテキストをなくす//
+    errMsgEmail.textContent = '';//クラス内のテキストをなくす//
     email.classList.remove('input-invalid');//eメールに追加したクラス削除
     }
-   
+  
+  const opinion = document.getElementById('opinion');
+  const errMsgOpi = document.getElementById('err-msg-opinion');
+
+    if (opinion.value.length > 120) {
+      errMsgOpi.classList.add('form-invalid');
+      errMsgOpi.textContent = '120文字以内で入力してください';
+      opinion.classList.add('input-invalid');
+      return;
+    } 
 
   
     
