@@ -8,6 +8,9 @@
         <td> {{$input['fullname']}}</td>
       </tr>
       <tr>
+        <th><label>性別</label></th>
+        <td>{{$input['gender']}}</td>
+      <tr>
         <th><label>メールアドレス<label></th>
         <td> {{$input['email']}}</td>
       </tr>

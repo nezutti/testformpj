@@ -18,6 +18,7 @@ class ContactController extends Controller
     public function post(Request $request){
         $request->validate([
         'fullname'=>'required',
+        'gender'=>'required',
         'email'=>'required|email',
         'postcode'=>['required',new ZipCodeRule()],
         'address'=>'required',
