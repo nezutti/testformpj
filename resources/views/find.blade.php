@@ -16,6 +16,12 @@
     @csrf
     <label for="fullname">お名前</label>
     <input type="text" id="fullname" name="fullname">
+    <label>性別
+      <label>全て<input type="radio" name="gender" value="1,2" selected></label>
+      <label for="male">男性<input type="radio" id="male" name="gender" value="1"></label>
+      <label for="female">女性<input type="radio" id="female" name="gender" value="2"></label>
+    </label>
+      
     <br/>
     <label for="created_at">登録日</label>
     <input type="date" id="created_at" name="from_time">
@@ -35,6 +41,7 @@
     <tr>
       <th>ID</th>
       <th>お名前</th>
+      <th>性別</th>
       <th>メールアドレス</th>
       <th>ご意見</th>
     </tr>
@@ -43,6 +50,7 @@
     <tr>
       <td>{{$item->id}}</td>
       <td>{{$item->fullname}}</td>
+      <td>{{$item->gender}}</td>
       <td>{{$item->email}}</td>
       <td><p class="opinion" title="{{$item->opinion}}">{{$item->opinion}}</p></td>
       <form method="post" action="/contact/delete">

@@ -9,7 +9,7 @@
       <input type="text" name="fullname"  id="fullname" value="{{old('fullname')}}">
       <br> 
       <label>性別
-        <label for="male">男性<input type="radio" name="gender" id="male"  value="1"></label>
+        <label for="male">男性<input type="radio" name="gender" id="male"  value="1"  checked></label>
         <label for="female">女性<input type="radio" name="gender" id="female" value="2"></label>
       </label>
       <br>

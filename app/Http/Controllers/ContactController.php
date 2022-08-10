@@ -71,11 +71,18 @@ class ContactController extends Controller
         $email=$request->email;
         $from_time=$request->from_time;
         $to_time=$request->to_time;
+        $gender=$request->gender;
 
         $query=Contact::query();
         
         $query->when($fullname,function($query,$fullname){
             return $query->where('fullname','like',"%$fullname%");
+        });
+
+        $query->when($gender,function($query,$gender){
+          
+            return $query->where('gender',$gender);
+                
         });
 
         $query->when($email,function($query,$email){

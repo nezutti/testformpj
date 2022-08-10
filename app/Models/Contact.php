@@ -11,11 +11,13 @@ class Contact extends Model
 
     protected $fillable=[
         "fullname",
+        "gender",
         "email",
         "postcode",
         "address",
         "building_name",
         "opinion",
+        
     ];
 
     public static $rules=array(
