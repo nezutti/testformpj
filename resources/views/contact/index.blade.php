@@ -11,14 +11,14 @@
       <br> 
       <label for="email">メールアドレス</label>
       <input type="text" id="email" name="email" value="{{old('email')}}">
-      <div id="err-msg-email"></div>
+      <p id="result1"></p>
       
-      <br>
       <div class="h-adr">
       <span class="p-country-name" style="display:none;">Japan</span>
       <label for="postcode">郵便番号</label>
       <label for="postcode">〒<input type="text" id="postcode" name="postcode" class="p-postal-code" value="{{old('postcode')}}" ></label>
-      <br>
+      <p id="result2"></p>
+      
       <label for="address">住所</label>
       <input type="text" id="address" name="address" class="p-region p-locality p-street-address p-extended-address" value="{{old('address')}}" />
       </div>
@@ -28,8 +28,8 @@
       <br>
       <label for="opinion">ご意見</label>
       <textarea name="opinion" id="opinion">{{old('opinion')}}</textarea>
-      <div id="err-msg-opinion"></div>
-      <br>
+      <p id="result3"></p>
+      
       <button type="submit">内容確認</button>
       
     </form>
