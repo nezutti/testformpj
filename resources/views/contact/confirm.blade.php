@@ -18,6 +18,7 @@ label{
 table{
   width:80%;
   margin:20px auto;
+  text-align:center;
 }
 
 th{
@@ -89,7 +90,7 @@ td{
       </tr>
     </table>
     <button type="submit" class="submit">送信</button>
-    <button type="submit"  name="back" class="back">戻る</a>
+    <button type="submit"  name="back" class="back">修正する</a>
   </from>
   
     
