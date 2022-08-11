@@ -99,6 +99,8 @@ class ContactController extends Controller
 
         $items=$query->paginate(10);
 
+        
+
         return view('find',['items'=>$items]);
     }
 

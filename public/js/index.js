@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pattern.test(postcode.value)) {
       result2.textContent=""
     } else {
-      result2.textContent="正しい記述方法して"
+      result2.textContent="000-0000のような形で入力してください"
     }
     
   })

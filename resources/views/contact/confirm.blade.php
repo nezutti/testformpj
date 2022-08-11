@@ -1,3 +1,60 @@
+<style>
+*{
+   outline: 1px solid red !important;
+   margin:0px;
+   padding:0px;
+}
+
+h2{
+  text-align:center;
+}
+
+label{
+  font-weight:bold;
+  font-size:14px;
+  margin:auto;
+}
+
+table{
+  width:80%;
+  margin:20px auto;
+}
+
+th{
+  width:30%;
+  padding:20px 0px;
+  
+}
+
+tr{
+  padding-bottom:30px;
+}
+
+td{
+  font-size:14px;
+}
+
+.submit{
+  display:block;
+  margin:20px auto;
+  width:120px;
+  padding:5px 8px;
+  border:1px solid grey;
+  border-radius:5px;
+  color:white;
+  font-weight:bold;
+  background-color:black;
+}
+
+.back{
+  display:block;
+  margin:auto;
+}
+
+
+
+</style>
+
 <div class="confirm">
   <h2>内容確認</h2>
   <form method="post" action="{{ route('contact.send') }}">
@@ -31,9 +88,8 @@
         <td> {{$input['opinion']}}</td>
       </tr>
     </table>
-    <button type="submit">送信</button>
-    <br>
-    <button type="submit"  name="back" >戻る</a>
+    <button type="submit" class="submit">送信</button>
+    <button type="submit"  name="back" class="back">戻る</a>
   </from>
   
     
